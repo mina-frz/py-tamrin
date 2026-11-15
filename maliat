@@ -1,0 +1,19 @@
+salary = int(input("Enter your salary: "))
+child = input("Do you have a child? yes/no: ")
+
+if salary <= 10000000:
+    maliat = 0
+
+elif salary <= 25000000:
+    maliat = (salary - 10000000) * 0.10
+
+else:
+    maliat = (15000000 * 0.10) + (salary - 25000000) * 0.20
+
+if child == "yes":
+    maliat = maliat - 500000
+
+if maliat < 0:
+    maliat = 0
+
+print("Your tax:", maliat)
