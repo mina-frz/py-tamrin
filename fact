@@ -1,0 +1,8 @@
+num = int(input("یک عدد وارد کنید: "))
+
+fact = 1
+
+for i in range(1, num + 1):
+    fact = fact * i
+
+print("فاکتوریل عدد برابر است با:", fact)
