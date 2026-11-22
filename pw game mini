@@ -1,0 +1,57 @@
+import random
+
+while True:
+    print("\n----- منوی اصلی -----")
+    print("1. رمزساز امن")
+    print("2. بازی حدس عدد")
+    print("3. خروج")
+
+    choice = int(input("یک گزینه انتخاب کنید: "))
+
+    # بخش اول: رمزساز امن
+    if choice == 1:
+        length = int(input("طول رمز را وارد کنید: "))
+
+        if length > 0:
+            chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$"
+            password = ""
+
+            for i in range(length):
+                password = password + random.choice(chars)
+
+            print("رمز ساخته شده:", password)
+
+        else:
+            print("طول رمز باید بیشتر از صفر باشد")
+
+    # بخش دوم: بازی حدس عدد
+    elif choice == 2:
+        secret = random.randint(1, 100)
+
+        print("یک عدد بین 1 تا 100 حدس بزنید")
+        print("شما 7 فرصت دارید")
+
+        for i in range(7):
+            guess = int(input("عدد مورد نظر: "))
+
+            if guess == secret:
+                print("آفرین! عدد را درست حدس زدید")
+                break
+
+            elif guess > secret:
+                print("عدد کوچک تری حدس بزنید")
+
+            else:
+                print("عدد بزرگ تری حدس بزنید")
+
+        else:
+            print("متاسفانه فرصت شما تمام شد")
+            print("عدد درست این بود:", secret)
+
+    # خروج از برنامه
+    elif choice == 3:
+        print("از برنامه خارج شدید")
+        break
+
+    else:
+        print("گزینه اشتباه است")
