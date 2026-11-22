@@ -1,0 +1,40 @@
+balance = 1000000
+
+while True:
+    print("\n----- دستگاه خودپرداز -----")
+    print("1. مشاهده موجودی")
+    print("2. برداشت وجه")
+    print("3. واریز وجه")
+    print("4. خروج")
+
+    choice = int(input("یک گزینه انتخاب کنید: "))
+
+    if choice == 1:
+        print("موجودی حساب شما:", balance, "تومان")
+
+    elif choice == 2:
+        money = int(input("مبلغ برداشت را وارد کنید: "))
+
+        if money <= balance and money > 0:
+            balance = balance - money
+            print("برداشت با موفقیت انجام شد")
+            print("موجودی جدید:", balance)
+        else:
+            print("موجودی کافی نیست یا مبلغ نامعتبر است")
+
+    elif choice == 3:
+        money = int(input("مبلغ واریز را وارد کنید: "))
+
+        if money > 0:
+            balance = balance + money
+            print("واریز با موفقیت انجام شد")
+            print("موجودی جدید:", balance)
+        else:
+            print("مبلغ وارد شده نامعتبر است")
+
+    elif choice == 4:
+        print("از دستگاه خودپرداز خارج شدید")
+        break
+
+    else:
+        print("گزینه وارد شده اشتباه است")
