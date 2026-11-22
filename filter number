@@ -1,0 +1,12 @@
+for i in range(1, 51):
+
+    if i == 42:
+        print("به عدد 42 رسیدیم، برنامه متوقف شد")
+        break
+
+    elif i % 5 == 0:
+        print(i, "بر 5 بخش پذیر است، رد شد")
+        continue
+
+    elif i % 3 == 0:
+        print(i, "بر 3 بخش پذیر است")
